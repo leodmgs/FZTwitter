@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xp2-Z0-c6H">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xp2-Z0-c6H">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zip-CU-z4Y">
@@ -50,8 +50,12 @@
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GGU-iR-DPO"/>
                 <constraint firstItem="oQ8-MJ-D9R" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Kdn-np-QBk"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="SLC-zr-bqp"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UYJ-Dx-6Ye"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oQ8-MJ-D9R" secondAttribute="trailing" constant="178" id="cki-Df-Nmj"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="dF5-bn-U32"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qGP-6L-vAF"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="u89-uH-H6b"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xE1-7V-RTM"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xFh-fR-YNr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
