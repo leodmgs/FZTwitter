@@ -18,6 +18,9 @@
 		7A477F9C226B7BC700D16311 /* FZTweetsResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A477F9B226B7BC700D16311 /* FZTweetsResultViewController.swift */; };
 		7A477FCA226D6B4F00D16311 /* FZTweetsCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A477FC9226D6B4E00D16311 /* FZTweetsCollectionView.xib */; };
 		7A477FCC226D6BC500D16311 /* FZTweetsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A477FCB226D6BC500D16311 /* FZTweetsCollectionView.swift */; };
+		7A477FCE226E52B400D16311 /* FZTweetDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A477FCD226E52B400D16311 /* FZTweetDatasource.swift */; };
+		7A477FDB226E5D7000D16311 /* FZTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A477FD9226E5D7000D16311 /* FZTweetCell.swift */; };
+		7A477FDC226E5D7000D16311 /* FZTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A477FDA226E5D7000D16311 /* FZTweetCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		7A477F9B226B7BC700D16311 /* FZTweetsResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTweetsResultViewController.swift; sourceTree = "<group>"; };
 		7A477FC9226D6B4E00D16311 /* FZTweetsCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZTweetsCollectionView.xib; sourceTree = "<group>"; };
 		7A477FCB226D6BC500D16311 /* FZTweetsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTweetsCollectionView.swift; sourceTree = "<group>"; };
+		7A477FCD226E52B400D16311 /* FZTweetDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTweetDatasource.swift; sourceTree = "<group>"; };
+		7A477FD9226E5D7000D16311 /* FZTweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTweetCell.swift; sourceTree = "<group>"; };
+		7A477FDA226E5D7000D16311 /* FZTweetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZTweetCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7A477F6B2268FF4000D16311 /* FZTweet.swift */,
+				7A477FCD226E52B400D16311 /* FZTweetDatasource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +124,7 @@
 		7A477F622267F4C900D16311 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A477FD4226E5AC500D16311 /* Cell */,
 				7A477F99226B74BB00D16311 /* FZCustomTextField.swift */,
 				7A477FCB226D6BC500D16311 /* FZTweetsCollectionView.swift */,
 				7A477FC9226D6B4E00D16311 /* FZTweetsCollectionView.xib */,
@@ -157,6 +165,15 @@
 				7A477F482267F44900D16311 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		7A477FD4226E5AC500D16311 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A477FD9226E5D7000D16311 /* FZTweetCell.swift */,
+				7A477FDA226E5D7000D16311 /* FZTweetCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A477F4C2267F44900D16311 /* LaunchScreen.storyboard in Resources */,
+				7A477FDC226E5D7000D16311 /* FZTweetCell.xib in Resources */,
 				7A477F492267F44900D16311 /* Assets.xcassets in Resources */,
 				7A477FCA226D6B4F00D16311 /* FZTweetsCollectionView.xib in Resources */,
 				7A477F472267F44200D16311 /* Main.storyboard in Resources */,
@@ -264,7 +282,9 @@
 				7A477F9A226B74BB00D16311 /* FZCustomTextField.swift in Sources */,
 				7A477F9C226B7BC700D16311 /* FZTweetsResultViewController.swift in Sources */,
 				7A477FCC226D6BC500D16311 /* FZTweetsCollectionView.swift in Sources */,
+				7A477FCE226E52B400D16311 /* FZTweetDatasource.swift in Sources */,
 				7A477F6C2268FF4000D16311 /* FZTweet.swift in Sources */,
+				7A477FDB226E5D7000D16311 /* FZTweetCell.swift in Sources */,
 				7A477F6E22690AF500D16311 /* FZSearchViewController.swift in Sources */,
 				7A477F422267F44200D16311 /* AppDelegate.swift in Sources */,
 			);

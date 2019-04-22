@@ -14,7 +14,7 @@
         <scene sceneID="cTr-fh-eXq">
             <objects>
                 <viewController id="Sn4-Ln-bvp" customClass="FZSearchViewController" customModule="FZTwitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q7p-uy-vtp">
+                    <view key="view" tag="4" contentMode="scaleToFill" id="q7p-uy-vtp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,10 +54,10 @@
         <scene sceneID="ve2-dw-dUc">
             <objects>
                 <viewController id="Y9r-wk-c03" customClass="FZTweetsResultViewController" customModule="FZTwitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="exk-JH-OK0">
+                    <view key="view" tag="9" contentMode="scaleToFill" id="exk-JH-OK0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Q6h-bf-Z87"/>
                     </view>
                 </viewController>
