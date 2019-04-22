@@ -33,16 +33,7 @@ class FZTweetsCollectionView: UIView {
         contentView.addSubview(collectionView)
         contentView.addSubview(activityIndicator)
         
-        activateContentViewConstraints()
-    }
-    
-    private func activateContentViewConstraints() {
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: self.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-            ])
+        
     }
 
 }

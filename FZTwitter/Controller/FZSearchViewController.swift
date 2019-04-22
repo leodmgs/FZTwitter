@@ -33,7 +33,7 @@ class FZSearchViewController: UIViewController {
             frame: CGRect(x: 0, y: 0, width: 32, height: 32))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "profile_image")
+        imageView.image = UIImage(named: "profile_img")
         imageView.layer.cornerRadius = 16
         imageView.clipsToBounds = true
         return imageView
