@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FZTweetsCollectionView" customModule="FZTwitter" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="oQ8-MJ-D9R" id="XLU-PP-2KF"/>
                 <outlet property="collectionView" destination="xp2-Z0-c6H" id="5gG-YD-eve"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="wBb-Ht-v7J"/>
             </connections>
@@ -21,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xp2-Z0-c6H">
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xp2-Z0-c6H">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zip-CU-z4Y">
@@ -31,15 +32,25 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oQ8-MJ-D9R">
+                    <rect key="frame" x="177" y="30" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="IGk-TJ-Yyk"/>
+                        <constraint firstAttribute="height" constant="20" id="otf-zY-880"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.88235294117647056" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="oQ8-MJ-D9R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="177" id="1G2-e6-nwi"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BEI-pm-C1N"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="FYt-bA-U8v"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Fkn-Cn-VTh"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FwH-YK-UgP"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GGU-iR-DPO"/>
+                <constraint firstItem="oQ8-MJ-D9R" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Kdn-np-QBk"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="SLC-zr-bqp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oQ8-MJ-D9R" secondAttribute="trailing" constant="178" id="cki-Df-Nmj"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qGP-6L-vAF"/>
                 <constraint firstItem="xp2-Z0-c6H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xFh-fR-YNr"/>
             </constraints>

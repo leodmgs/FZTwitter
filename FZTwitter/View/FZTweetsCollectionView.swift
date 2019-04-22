@@ -12,6 +12,7 @@ class FZTweetsCollectionView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,19 +29,20 @@ class FZTweetsCollectionView: UIView {
         
         contentView.frame = self.frame
         addSubview(contentView)
-        contentView.addSubview(collectionView)
         
+        contentView.addSubview(collectionView)
+        contentView.addSubview(activityIndicator)
+        
+        activateContentViewConstraints()
+    }
+    
+    private func activateContentViewConstraints() {
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: self.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
-            collectionView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        ])
+            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            ])
     }
 
 }
