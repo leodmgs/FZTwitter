@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FZTweetsCollectionView" customModule="FZTwitter" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="xp2-Z0-c6H" id="5gG-YD-eve"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="wBb-Ht-v7J"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xp2-Z0-c6H">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zip-CU-z4Y">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="50" height="50"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="0.88235294117647056" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BEI-pm-C1N"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="FYt-bA-U8v"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Fkn-Cn-VTh"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FwH-YK-UgP"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GGU-iR-DPO"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="SLC-zr-bqp"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qGP-6L-vAF"/>
+                <constraint firstItem="xp2-Z0-c6H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xFh-fR-YNr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="125.59999999999999" y="125.4872563718141"/>
+        </view>
+    </objects>
+</document>
