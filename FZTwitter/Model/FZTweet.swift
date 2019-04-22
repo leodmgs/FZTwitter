@@ -15,6 +15,6 @@ struct FZTweet {
     
     var name: String
     var text: String
-    var profile_image: UIImage
+    var profile_image: UIImage?
 
 }
