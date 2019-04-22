@@ -11,9 +11,10 @@ import UIKit
 
 class FZTweetsResultViewController: UIViewController {
     
-    // MARK: attributes
-    
-    let tweetsCollectionView: FZTweetsCollectionView = {
+    // MARK: Attributes
+
+    // FIXME: Unable to add this view through the IB.
+    let tweetsView: FZTweetsCollectionView = {
         let view = FZTweetsCollectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -32,7 +33,11 @@ class FZTweetsResultViewController: UIViewController {
         }
     }
     
-    // MARK: functions
+    private let tweetDatasource: FZTweetDatasource = {
+        return FZTweetDatasource.shared
+    }()
+    
+    // MARK: Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +50,14 @@ class FZTweetsResultViewController: UIViewController {
     }
     
     private func setupView() {
-        view.addSubview(tweetsCollectionView)
+        tweetsView.collectionView.delegate = self
+        tweetsView.collectionView.dataSource = self
+        tweetsView.collectionView.register(UINib(nibName: "FZTweetCell", bundle: nil), forCellWithReuseIdentifier: "FZTweetCell.id")
+        self.view.addSubview(tweetsView)
+        
         resultTextField.delegate = self
         resultTextField.addTarget(self, action: #selector(onSearch), for: .touchDown)
+        
         activateRegularConstraints()
     }
     
@@ -76,10 +86,10 @@ class FZTweetsResultViewController: UIViewController {
     // MARK: add comments
     private func activateRegularConstraints() {
         NSLayoutConstraint.activate([
-            tweetsCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            tweetsCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            tweetsCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            tweetsCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            tweetsView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            tweetsView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            tweetsView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            tweetsView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         // FIXME: implement a custom bar to handle the constraints according to the context
         NSLayoutConstraint.activate([
@@ -101,4 +111,21 @@ extension FZTweetsResultViewController: UITextFieldDelegate {
         return false
     }
 
+}
+
+
+extension FZTweetsResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tweetDatasource.datasource?.count ?? 0
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let tweetCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FZTweetCell.id", for: indexPath) as! FZTweetCell
+        return tweetCell
+    }
+}
+
+extension FZTweetsResultViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 375, height: 350)
+    }
 }
