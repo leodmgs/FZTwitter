@@ -12,7 +12,6 @@ class FZTweetsCollectionView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,12 +26,13 @@ class FZTweetsCollectionView: UIView {
     func setupView() {
         Bundle.main.loadNibNamed("FZTweetsCollectionView", owner: self, options: nil)
         
+        collectionView.register(UINib(nibName: "FZTweetCell", bundle: nil), forCellWithReuseIdentifier: "FZTweetCell.id")
+        
+        collectionView.register(UINib(nibName: "FZTweetHeaderReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FZTweetHeaderReusableView.id")
+        
         contentView.frame = self.frame
         addSubview(contentView)
-        
         contentView.addSubview(collectionView)
-        contentView.addSubview(activityIndicator)
-        
         
     }
 

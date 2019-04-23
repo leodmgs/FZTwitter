@@ -37,6 +37,9 @@ class FZTweetsResultViewController: UIViewController {
         return FZTweetDatasource.shared
     }()
     
+    var isLoading: Bool = true
+    
+    
     // MARK: Functions
     
     override func viewDidLoad() {
@@ -52,7 +55,6 @@ class FZTweetsResultViewController: UIViewController {
     private func setupView() {
         tweetsView.collectionView.delegate = self
         tweetsView.collectionView.dataSource = self
-        tweetsView.collectionView.register(UINib(nibName: "FZTweetCell", bundle: nil), forCellWithReuseIdentifier: "FZTweetCell.id")
         self.view.addSubview(tweetsView)
         
         resultTextField.delegate = self
@@ -69,7 +71,7 @@ class FZTweetsResultViewController: UIViewController {
         let twitterBlueColor = UIColor(red: 0.11, green: 0.63, blue: 0.95, alpha: 1)
         
         // Setup the right button item on the navigation bar
-        let filterItem = UIBarButtonItem(image: UIImage(named: "filter_ic"), style: .plain, target: self, action: nil)
+        let filterItem = UIBarButtonItem(image: UIImage(named: "filter_ic"), style: .plain, target: self, action: #selector(onFilter))
         filterItem.tintColor = twitterBlueColor
         navigationItem.rightBarButtonItem = filterItem
         
@@ -82,6 +84,14 @@ class FZTweetsResultViewController: UIViewController {
     @objc private func onBack() {
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    @objc private func onFilter() {
+        isLoading = !isLoading
+        DispatchQueue.main.async {
+            self.tweetsView.collectionView.reloadData()
+        }
+    }
+    
     
     // MARK: add comments
     private func activateRegularConstraints() {
@@ -102,32 +112,47 @@ class FZTweetsResultViewController: UIViewController {
 
 
 extension FZTweetsResultViewController: UITextFieldDelegate {
-
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return false
     }
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
     }
-
 }
 
 
 extension FZTweetsResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tweetDatasource.datasource?.count ?? 0
     }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let tweetCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FZTweetCell.id", for: indexPath) as! FZTweetCell
         tweetCell.setUserInfoLabel("Steve Jobs", true, "@SteveJobs")
         tweetCell.setTimeElapsed("3h")
         return tweetCell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let headerActivityCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FZTweetHeaderReusableView.id", for: indexPath)
+            return headerActivityCell
+        }
+        return UICollectionReusableView()
+    }
+    
 }
 
 extension FZTweetsResultViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 375, height: 400)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        return isLoading ? CGSize(width: screenWidth, height: 40) : .zero
+    }
+    
 }
