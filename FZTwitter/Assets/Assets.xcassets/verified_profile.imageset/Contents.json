@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "verified_profile.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "steve-jobs.jpg",
       "scale" : "2x"
     },
     {
