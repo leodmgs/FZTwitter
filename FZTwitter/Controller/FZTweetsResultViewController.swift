@@ -120,12 +120,14 @@ extension FZTweetsResultViewController: UICollectionViewDelegate, UICollectionVi
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let tweetCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FZTweetCell.id", for: indexPath) as! FZTweetCell
+        tweetCell.setUserInfoLabel("Steve Jobs", true, "@SteveJobs")
+        tweetCell.setTimeElapsed("3h")
         return tweetCell
     }
 }
 
 extension FZTweetsResultViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 375, height: 350)
+        return CGSize(width: 375, height: 400)
     }
 }

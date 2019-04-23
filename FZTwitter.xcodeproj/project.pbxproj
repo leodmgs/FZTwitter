@@ -21,6 +21,7 @@
 		7A477FCE226E52B400D16311 /* FZTweetDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A477FCD226E52B400D16311 /* FZTweetDatasource.swift */; };
 		7A477FDB226E5D7000D16311 /* FZTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A477FD9226E5D7000D16311 /* FZTweetCell.swift */; };
 		7A477FDC226E5D7000D16311 /* FZTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A477FDA226E5D7000D16311 /* FZTweetCell.xib */; };
+		7A477FDE226E948F00D16311 /* FZTweetOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A477FDD226E948E00D16311 /* FZTweetOptionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		7A477FCD226E52B400D16311 /* FZTweetDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTweetDatasource.swift; sourceTree = "<group>"; };
 		7A477FD9226E5D7000D16311 /* FZTweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTweetCell.swift; sourceTree = "<group>"; };
 		7A477FDA226E5D7000D16311 /* FZTweetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZTweetCell.xib; sourceTree = "<group>"; };
+		7A477FDD226E948E00D16311 /* FZTweetOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTweetOptionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				7A477FD4226E5AC500D16311 /* Cell */,
 				7A477F99226B74BB00D16311 /* FZCustomTextField.swift */,
+				7A477FDD226E948E00D16311 /* FZTweetOptionButton.swift */,
 				7A477FCB226D6BC500D16311 /* FZTweetsCollectionView.swift */,
 				7A477FC9226D6B4E00D16311 /* FZTweetsCollectionView.xib */,
 			);
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A477F9A226B74BB00D16311 /* FZCustomTextField.swift in Sources */,
+				7A477FDE226E948F00D16311 /* FZTweetOptionButton.swift in Sources */,
 				7A477F9C226B7BC700D16311 /* FZTweetsResultViewController.swift in Sources */,
 				7A477FCC226D6BC500D16311 /* FZTweetsCollectionView.swift in Sources */,
 				7A477FCE226E52B400D16311 /* FZTweetDatasource.swift in Sources */,
