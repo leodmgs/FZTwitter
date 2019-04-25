@@ -33,6 +33,8 @@ class FZUserTimelineViewController: UIViewController {
         timelineCollectionView.register(UINib(nibName: "FZTwitterFilterReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FZTwitterFilterReusableView.id")
         
         timelineCollectionView.register(UINib(nibName: "FZUserInfoCell", bundle: nil), forCellWithReuseIdentifier: "FZUserInfoCell.id")
+        
+        timelineCollectionView.register(UINib(nibName: "FZTweetCell", bundle: nil), forCellWithReuseIdentifier: "FZTweetCell.id")
     
         if let layout = timelineCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.sectionHeadersPinToVisibleBounds = true
@@ -55,12 +57,18 @@ extension FZUserTimelineViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             let userInfoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FZUserInfoCell.id", for: indexPath) as! FZUserInfoCell
             return userInfoCell
+        case 1:
+            let tweetCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FZTweetCell.id", for: indexPath) as! FZTweetCell
+            return tweetCell
+        default:
+            debugPrint("Warning: Unable to find section \(indexPath.section).")
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenericCell.identifier, for: indexPath)
+            return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenericCell.identifier, for: indexPath)
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -79,7 +87,7 @@ extension FZUserTimelineViewController: UICollectionViewDelegate, UICollectionVi
         default:
             debugPrint("Warning: Unable to find section \(indexPath.section).")
         }
-        
+        // FIXME: provide a generic header
         return UICollectionReusableView()
     }
     
@@ -97,10 +105,14 @@ extension FZUserTimelineViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             return CGSize(width: screenWidth, height: 200)
+        case 1:
+            return CGSize(width: screenWidth, height: 400)
+        default:
+            return CGSize(width: screenWidth, height: 100)
         }
-        return CGSize(width: screenWidth, height: 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
