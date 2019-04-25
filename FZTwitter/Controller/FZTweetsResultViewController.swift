@@ -48,6 +48,18 @@ class FZTweetsResultViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let isHidden = self.navigationController?.isNavigationBarHidden, isHidden {
+            self.navigationController?.setNavigationBarHidden(!isHidden, animated: true)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let isHidden = self.navigationController?.isNavigationBarHidden, isHidden {
+            self.navigationController?.setNavigationBarHidden(isHidden, animated: true)
+        }
+    }
+    
     @objc private func onSearch() {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -142,12 +154,18 @@ extension FZTweetsResultViewController: UICollectionViewDelegate, UICollectionVi
         return UICollectionReusableView()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let userTimelineController = FZUserTimelineViewController()
+        navigationController?.pushViewController(userTimelineController, animated: true)
+    }
+    
 }
 
 extension FZTweetsResultViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 375, height: 400)
+        let screenWidth = UIScreen.main.bounds.width
+        return CGSize(width: screenWidth, height: 400)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

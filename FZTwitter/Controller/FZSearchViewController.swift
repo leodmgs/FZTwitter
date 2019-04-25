@@ -68,6 +68,17 @@ class FZSearchViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let isHidden = self.navigationController?.isNavigationBarHidden, isHidden {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+        
+    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//    }
+    
     private func setupView() {
         profileButtonItem = UIBarButtonItem(customView: profileImage)
         
