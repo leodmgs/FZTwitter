@@ -10,9 +10,15 @@ import UIKit
 
 class FZTwitterFilterReusableView: UICollectionReusableView {
 
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupView()
+    }
+    
+    private func setupView() {
+        
     }
     
 }
