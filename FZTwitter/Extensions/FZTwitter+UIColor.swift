@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit.UIColor
+
+extension UIColor {
+    
+    static let fzBlue = UIColor(red: 0.11, green: 0.63, blue: 0.95, alpha: 1)
+    
+}
