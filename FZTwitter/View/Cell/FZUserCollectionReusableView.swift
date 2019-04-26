@@ -18,12 +18,19 @@ class FZUserCollectionReusableView: UICollectionReusableView {
     
     // MARK: - Outlets
     
-    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var profileImage: FZCustomImageView!
+    
+    @IBOutlet var backgroundImage: FZCustomImageView!
     
     @IBOutlet var notificationButton: UIButton!
     
     @IBOutlet var followButton: UIButton!
     var isFollowing = false
+    
+    @IBOutlet var usernameLabel: UILabel!
+    
+    @IBOutlet var alertButton: UIButton!
+    var isAlert = false
     
     // MARK: - Attributes
     
@@ -67,4 +74,18 @@ class FZUserCollectionReusableView: UICollectionReusableView {
         }
         isFollowing = !isFollowing
     }
+    
+    @IBAction func onAlert(_ sender: Any) {
+        DispatchQueue.main.async {
+            if self.isAlert {
+                self.alertButton.tintColor = .fzBlue
+                self.alertButton.backgroundColor = .white
+            } else {
+                self.alertButton.tintColor = .white
+                self.alertButton.backgroundColor = .fzBlue
+            }
+        }
+        isAlert = !isAlert
+    }
+
 }

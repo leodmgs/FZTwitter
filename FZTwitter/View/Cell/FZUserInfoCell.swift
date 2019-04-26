@@ -10,6 +10,13 @@ import UIKit
 
 class FZUserInfoCell: UICollectionViewCell {
 
+    
+    @IBOutlet var descriptionLabel: UITextView!
+    
+    @IBOutlet var createtAtLabel: UILabel!
+    
+    @IBOutlet var followsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

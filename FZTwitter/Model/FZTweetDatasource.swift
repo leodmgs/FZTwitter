@@ -13,7 +13,7 @@ class FZTweetDatasource {
     // MARK: Attributes
     
     // Object of this class that allows other objects to access the functions of this class
-    static let shared = FZTweetDatasource()
+//    static let shared = FZTweetDatasource()
     
     // Custom Queue to perform thread safe operations
     private let concurrentQueue: DispatchQueue = {
@@ -35,11 +35,7 @@ class FZTweetDatasource {
     }
     
     // Private initializer to create only the object of this class in shared property. This is the singleton pattern.
-    private init() {
-        unsafeDatasource.append(FZTweet(name: "John", text: "Twitter's John", profile_image: nil))
-        unsafeDatasource.append(FZTweet(name: "Sara", text: "Twitter's Sara", profile_image: nil))
-        unsafeDatasource.append(FZTweet(name: "Mike", text: "Twitter's Mike", profile_image: nil))
-    }
+//    private init() {}
     
     
     // MARK: Attributes

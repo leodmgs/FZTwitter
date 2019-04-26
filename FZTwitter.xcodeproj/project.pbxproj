@@ -34,6 +34,9 @@
 		7A684073227160D000F1365A /* FZUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A684071227160D000F1365A /* FZUserInfoCell.xib */; };
 		7A6840762271673500F1365A /* FZTwitterFilterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6840742271673500F1365A /* FZTwitterFilterReusableView.swift */; };
 		7A6840772271673500F1365A /* FZTwitterFilterReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6840752271673500F1365A /* FZTwitterFilterReusableView.xib */; };
+		7A684089227227C400F1365A /* FZUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A684088227227C400F1365A /* FZUser.swift */; };
+		7A68408B2272284400F1365A /* FZCustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A68408A2272284400F1365A /* FZCustomImageView.swift */; };
+		7A68408F2272297D00F1365A /* FZTwitterQueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A68408E2272297D00F1365A /* FZTwitterQueryService.swift */; };
 		9B9ACD7C1160CE993E5605C8 /* Pods_FZTwitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71329AF6DA70E013D3FF5B71 /* Pods_FZTwitter.framework */; };
 		E0D52A62F9B00E7C1B458499 /* Pods_FZTwitterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B86BE9BEEEDB890B07D23CF1 /* Pods_FZTwitterTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,9 @@
 		7A684071227160D000F1365A /* FZUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZUserInfoCell.xib; sourceTree = "<group>"; };
 		7A6840742271673500F1365A /* FZTwitterFilterReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTwitterFilterReusableView.swift; sourceTree = "<group>"; };
 		7A6840752271673500F1365A /* FZTwitterFilterReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FZTwitterFilterReusableView.xib; sourceTree = "<group>"; };
+		7A684088227227C400F1365A /* FZUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZUser.swift; sourceTree = "<group>"; };
+		7A68408A2272284400F1365A /* FZCustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZCustomImageView.swift; sourceTree = "<group>"; };
+		7A68408E2272297D00F1365A /* FZTwitterQueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FZTwitterQueryService.swift; sourceTree = "<group>"; };
 		B86BE9BEEEDB890B07D23CF1 /* Pods_FZTwitterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FZTwitterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9B7A8C832BECB7A0CA6C119 /* Pods-FZTwitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FZTwitter.release.xcconfig"; path = "Target Support Files/Pods-FZTwitter/Pods-FZTwitter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +157,7 @@
 		7A477F402267F44200D16311 /* FZTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				7A68408D2272296000F1365A /* Networking */,
 				7A68406D227149B500F1365A /* Extensions */,
 				7A477F662267F51600D16311 /* Assets */,
 				7A477F652267F4F300D16311 /* Storyboard */,
@@ -175,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				7A477F6B2268FF4000D16311 /* FZTweet.swift */,
+				7A684088227227C400F1365A /* FZUser.swift */,
 				7A477FCD226E52B400D16311 /* FZTweetDatasource.swift */,
 			);
 			path = Model;
@@ -186,6 +194,7 @@
 				7A477FD4226E5AC500D16311 /* Cell */,
 				7A477F99226B74BB00D16311 /* FZCustomTextField.swift */,
 				7A477FDD226E948E00D16311 /* FZTweetOptionButton.swift */,
+				7A68408A2272284400F1365A /* FZCustomImageView.swift */,
 				7A16C87D2270A0A00008E206 /* FZUserTimelineView.xib */,
 				7A477FCB226D6BC500D16311 /* FZTweetsCollectionView.swift */,
 				7A16C8852270AF470008E206 /* FZUserTimelineView.swift */,
@@ -253,6 +262,14 @@
 				7A68406E227149D300F1365A /* FZTwitter+UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7A68408D2272296000F1365A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7A68408E2272297D00F1365A /* FZTwitterQueryService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,13 +455,16 @@
 				7A684072227160D000F1365A /* FZUserInfoCell.swift in Sources */,
 				7A16C8862270AF470008E206 /* FZUserTimelineView.swift in Sources */,
 				7A477F9A226B74BB00D16311 /* FZCustomTextField.swift in Sources */,
+				7A68408B2272284400F1365A /* FZCustomImageView.swift in Sources */,
 				7A477FDE226E948F00D16311 /* FZTweetOptionButton.swift in Sources */,
 				7A68406F227149D300F1365A /* FZTwitter+UIColor.swift in Sources */,
 				7A477F9C226B7BC700D16311 /* FZTweetsResultViewController.swift in Sources */,
 				7A68406B227118FC00F1365A /* FZUserCollectionReusableView.swift in Sources */,
 				7A477FCC226D6BC500D16311 /* FZTweetsCollectionView.swift in Sources */,
 				7A477FCE226E52B400D16311 /* FZTweetDatasource.swift in Sources */,
+				7A68408F2272297D00F1365A /* FZTwitterQueryService.swift in Sources */,
 				7A6840762271673500F1365A /* FZTwitterFilterReusableView.swift in Sources */,
+				7A684089227227C400F1365A /* FZUser.swift in Sources */,
 				7A477F6C2268FF4000D16311 /* FZTweet.swift in Sources */,
 				7A477FDB226E5D7000D16311 /* FZTweetCell.swift in Sources */,
 				7A16C8802270A0C20008E206 /* FZUserTimelineViewController.swift in Sources */,

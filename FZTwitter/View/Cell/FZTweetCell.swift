@@ -11,12 +11,12 @@ import UIKit
 class FZTweetCell: UICollectionViewCell {
     
     // MARK: Attributes
-    
-    @IBOutlet var profileImage: UIImageView!
+        
+    @IBOutlet var profileImageView: FZCustomImageView!
     @IBOutlet var userInfo: UILabel!
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var tweetText: UITextView!
-    @IBOutlet var thumbnailImageView: UIImageView!
+    @IBOutlet var mediaImageView: FZCustomImageView!
     @IBOutlet var tweetOptionsStackView: UIStackView!
     @IBOutlet var tweetOption: UIButton!
     @IBOutlet var separatorLine: UIView!
@@ -38,12 +38,11 @@ class FZTweetCell: UICollectionViewCell {
     
     private func setupView() {
         
-        profileImage.layer.cornerRadius = 24
-        profileImage.clipsToBounds = true
+        profileImageView.layer.cornerRadius = 24
+        profileImageView.clipsToBounds = true
         
-        thumbnailImageView.layer.cornerRadius = 12
-        thumbnailImageView.clipsToBounds = true
-        thumbnailImageView.image = UIImage(named: "media_img")
+        mediaImageView.layer.cornerRadius = 12
+        mediaImageView.clipsToBounds = true
         
     }
     
@@ -52,7 +51,7 @@ class FZTweetCell: UICollectionViewCell {
     }
     
     func setUserInfoLabel(_ name: String, _ isVerified: Bool, _ username: String) {
-        userInfo.attributedText = attributedUserInfo(name, isVerified, username)
+        userInfo.attributedText = attributedUserInfo(name, isVerified, "@\(username)")
     }
     
     private func attributedTimeElapsed(for strTime: String) -> NSMutableAttributedString {
@@ -90,11 +89,9 @@ class FZTweetCell: UICollectionViewCell {
     
     @IBAction func onRetweet(_ sender: Any) {
         if isRetweeted {
-            retweetButton.iconImage = UIImage(named: "retweet_ic")
-            isRetweeted = false
+            // TODO
         } else {
-            retweetButton.iconImage = UIImage(named: "retweet_ic_on")
-            isRetweeted = true
+            // TODO
         }
         let animation = animationForTweetOption()
         retweetButton.layer.add(animation, forKey: "opacity")
@@ -102,11 +99,9 @@ class FZTweetCell: UICollectionViewCell {
     
     @IBAction func onLike(_ sender: Any) {
         if isLiked {
-            likeButton.iconImage = UIImage(named: "like_ic")
-            isLiked = false
+            // TODO
         } else {
-            likeButton.iconImage = UIImage(named: "like_ic_on")
-            isLiked = true
+            // TODO
         }
         let animation = animationForTweetOption()
         likeButton.layer.add(animation, forKey: "opacity")

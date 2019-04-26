@@ -7,14 +7,20 @@
 //
 
 import Foundation
-import UIKit
+import Swifter
 
 struct FZTweet {
     
-    // TODO: define properties needed to display on the screen.
-    
-    var name: String
     var text: String
-    var profile_image: UIImage?
-
+    var mediaUrl: URL?
+    var user: FZUser?
+    
+    init(json: JSON) {
+        self.text = json["text"].string!
+        if let urlString = json["extended_entities"]["media"][0]["media_url"].string {
+            self.mediaUrl = URL(string: urlString)
+        }
+        self.user = FZUser(json: json["user"])
+    }
+    
 }
