@@ -152,6 +152,8 @@ class FZTweetsResultViewController: UIViewController {
             } else {
                 cell.mediaImageView.isHidden = true
             }
+            cell.setTweetOption(for: .like, with: tweetObject.favoriteCount)
+            cell.setTweetOption(for: .retweet, with: tweetObject.retweetCount)
         }
         // FIXME: parse tweet time to calculate the time elapsed
         cell.setTimeElapsed("3h")
