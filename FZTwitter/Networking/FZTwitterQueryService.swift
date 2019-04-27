@@ -25,7 +25,7 @@ class FZTwitterQueryService {
     }
     
     func search(query: String, completion: @escaping (Array<FZTweet>?) -> ()) {
-        swifterAgent.searchTweet(using: query, count: 20, includeEntities: true, success: { json, error in
+        swifterAgent.searchTweet(using: query, count: 50, includeEntities: true, success: { json, error in
             var tweets = Array<FZTweet>()
             tweets = self.items(jsonItems: json)
             completion(tweets)
